@@ -1,0 +1,22 @@
+Kasyno 1.0
+
+31.01.2022(2h) 
+
+-Dodano możliwość obstawienia wybranej ilosci coinsow na high/low 
+-Dodano wyświetlające sie oczka na kostkach 
+-Dodano informacje czy sie wygrało czy nie 
+-Zablokowano losowanie jeśli nie postawiono zadnej ilości żetonów
+
+01.02.2022(1h)
+
+-Dodano mozliwosc obstawienia na wybrana cyfre
+-dodano tryb zmiany kolorow
+-poprawiono tło i obrazki kostek
+
+
+w planach
+-dodanie menu rozsuwanego z lewej strony
+-dodanie tworzenia konta
+-zablokowanie grania jesli nie posiadamy zetonow
+-polaczenie z plikiem tekstowym w którym przechowywane są ilosci punktów dla poszczególnego gracza
+-dodanie animacji przy losowaniu
