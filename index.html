@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="styles/mstyle.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kostki</title>
+</head>
+<body>
+  <div id="background">
+  <form>
+        <input type="button"  value="Kostki" >
+        <input type="button"  value="Slotsy" >
+        <input type="button"  value="Ruletka" >
+        <img id="bzit" src="styles/sun.PNG" onclick="motyw('sun')">
+        <img id="bzit" src="styles/moon.jpg" onclick="motyw('moon')"> 
+  </form>
+
+
+  <div id="main">
+    <p id="gz">Spróbuj swojego szczęscia</p>
+    <h3> Twoja ilość żetonów: <a id="points">1000</a> </h3>
+    
+
+  <form>
+    <label> Twój zakład:</label>
+    <input type="text" id="bets">
+    <br>
+    <input type="button"  value="1" id="low"  onclick="losujzliczb('1')">
+    <input type="button"  value="2" id="low"  onclick="losujzliczb('2')" >
+    <input type="button"  value="3" id="low"  onclick="losujzliczb('3')" >
+    <input type="button"  value="4" id="low"  onclick="losujzliczb('4')" >
+    <input type="button"  value="5" id="low"  onclick="losujzliczb('5')" >
+    <input type="button"  value="6" id="low"  onclick="losujzliczb('6')" >
+    <input type="button" value="LOW" id="low" onclick="losuj('LOW')" >
+    <br>
+    <input type="button"  value="7" id="high"  onclick="losujzliczb('7')" >
+    <input type="button"  value="8" id="high"  onclick="losujzliczb('8')" >
+    <input type="button"  value="9" id="high"  onclick="losujzliczb('9')" >
+    <input type="button"  value="10" id="high" onclick="losujzliczb('10')" >
+    <input type="button"  value="11" id="high" onclick="losujzliczb('11')" >
+    <input type="button"  value="12" id="high" onclick="losujzliczb('12')" >
+    <input type="button"  value="HIGH" id="high" onclick="losuj('HIGH')" >
+
+    
+   
+  </form>
+
+<script>
+
+function losuj(x){ 
+
+
+let becik = document.getElementById("bets").value;
+
+
+
+if( becik != 0){
+  losowanie(x);
+}
+else{
+  document.getElementById("gz").innerHTML=  " <div id='sad'> Musisz coś obstawić żeby zagrać </div>";
+}
+}
+
+function losowanie(x){
+let choice = x;  
+let random1 = Math.floor(Math.random() * 6)+1;
+let random2 = Math.floor(Math.random() * 6)+1;
+let wynik= random1+random2;
+let becik = document.getElementById("bets").value;
+
+document.getElementById("score").innerHTML=wynik; //wynik do zmiany 
+document.getElementById("result1").src ="oczka/oczko_"+random1+".PNG";
+document.getElementById("result2").src ="oczka/oczko_"+random2+".PNG";
+
+if(choice == 'LOW'){
+  console.log("low");
+  if(wynik <= 6)
+  {
+    iloscpunktow = (document.getElementById("points").innerHTML)*1+(becik*1.8);
+    document.getElementById("points").innerHTML = iloscpunktow.toFixed(0);
+    document.getElementById("gz").innerHTML=  " <div id='win'> Gratulacje </div>";
+  }
+  else{
+    iloscpunktow = (document.getElementById("points").innerHTML)*1-becik;
+    document.getElementById("points").innerHTML = iloscpunktow.toFixed(0);
+    document.getElementById("gz").innerHTML=  " <div id='lose'> Może następnym razem </div>";
+  }
+} 
+else if(choice == 'HIGH')
+{
+  console.log("high");
+  if(wynik > 6)
+  {
+    iloscpunktow = (document.getElementById("points").innerHTML)*1+(becik*1.8);
+    document.getElementById("points").innerHTML = iloscpunktow.toFixed(0);
+    document.getElementById("gz").innerHTML=  " <div id='win'> Gratulacje </div>";
+  }
+  else{
+    iloscpunktow = (document.getElementById("points").innerHTML)*1-becik;
+    document.getElementById("points").innerHTML = iloscpunktow.toFixed(0);
+    document.getElementById("gz").innerHTML=  " <div id='lose'> Może następnym razem </d iv>";
+  }
+}
+
+}
+
+function losujzliczb(x){ 
+
+let becik = document.getElementById("bets").value;
+
+if( becik != 0){
+  losowaniezliczb(becik,x);
+}
+else{
+  document.getElementById("gz").innerHTML= " <div id='sad'> Musisz coś obstawić żeby zagrać </div>";
+}
+}
+
+function losowaniezliczb(bet,liczba){
+
+let choice = liczba;   
+let random1 = Math.floor(Math.random() * 6)+1;
+let random2 = Math.floor(Math.random() * 6)+1;
+let wynik= random1+random2;
+let becik = bet;
+console.log("bet: " , bet," wybór: ",choice,"wynik: ",wynik);
+
+
+document.getElementById("score").innerHTML=wynik; //wynik do zmiany 
+document.getElementById("result1").src ="oczka/oczko_"+random1+".PNG";
+document.getElementById("result2").src ="oczka/oczko_"+random2+".PNG";
+
+  if(choice == wynik){
+    console.log("win");
+    iloscpunktow = (document.getElementById("points").innerHTML)*1+(becik*3);
+    document.getElementById("points").innerHTML = iloscpunktow.toFixed(0);
+    document.getElementById("gz").innerHTML=  " <div id='win'> Gratulacjeeee </div>";
+}
+else{
+  console.log("lose");
+    iloscpunktow = (document.getElementById("points").innerHTML)*1-becik;
+    document.getElementById("points").innerHTML = iloscpunktow.toFixed(0);
+    document.getElementById("gz").innerHTML=  " <div id='lose'> Może następnym razem </d iv>";
+}
+}
+
+function motyw(motive){
+  let kolor = motive;
+  if(kolor == 'moon'){
+  document.body.style.backgroundColor = "black";
+  document.body.style.color = "white";
+  }
+  else{
+    document.body.style.backgroundColor = "pink";
+   document.body.style.color = "black";
+  }
+
+}
+
+</script>
+
+<img id="result1" src="oczka/oczko_1.PNG">
+<img id="result2" src="oczka/oczko_1.PNG">
+
+<p id ="score"></p>
+  </div>
+</div>
+</body>
+</html>

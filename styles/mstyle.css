@@ -1,0 +1,54 @@
+
+body{
+    background-color: orange;
+    width: 100%;
+    height: 100%;
+}
+#main{
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px 40px;
+    background-color: rgba(88, 81, 81, 0.8);
+    border: 2px solid black;
+    border-radius: 25px;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    
+}
+    #win{
+        color: gold;
+        font-size: x-large;
+    }
+    #lose{
+        color: red;
+        font-size: x-large;
+    }
+    #sad{
+        color: green;
+        font-size: x-large;
+    }
+#high{
+    background-color: lightblue;
+}
+#low{
+    background-color: lightcoral;
+}
+#bzit{
+    width: 20px;
+    height: 20px;
+}
+#test{
+    color: blue;
+}
+#result1{
+    padding-top: 2%;
+    width: 100px;
+    height: 100px;
+}
+#result2{
+    width: 100px;
+    height: 100px;
+}
