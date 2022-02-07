@@ -12,11 +12,14 @@ Kasyno 1.0
 -Dodano mozliwosc obstawienia na wybrana cyfre
 -dodano tryb zmiany kolorow
 -poprawiono tło i obrazki kostek
-
+-zablokowanie grania jesli nie posiadamy zetonow
+-dodanie menu rozsuwanego z prawej strony
+-dodanie menu u góry strony
+-dodanie rozdzielczoscie na telefony
 
 w planach
--dodanie menu rozsuwanego z lewej strony
+
 -dodanie tworzenia konta
--zablokowanie grania jesli nie posiadamy zetonow
+
 -polaczenie z plikiem tekstowym w którym przechowywane są ilosci punktów dla poszczególnego gracza
 -dodanie animacji przy losowaniu
