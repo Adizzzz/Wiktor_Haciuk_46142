@@ -12,6 +12,8 @@ Kasyno 1.0
 -Dodano mozliwosc obstawienia na wybrana cyfre
 -dodano tryb zmiany kolorow
 -poprawiono tło i obrazki kostek
+
+07.02.2022(2h)
 -zablokowanie grania jesli nie posiadamy zetonow
 -dodanie menu rozsuwanego z prawej strony
 -dodanie menu u góry strony
