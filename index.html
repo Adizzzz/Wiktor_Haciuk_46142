@@ -5,20 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="styles/mstyle.css" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <title>Kostki</title>
 </head>
 <body>
-  <div id="background">
-  <form>
-        <input type="button"  value="Kostki" >
-        <input type="button"  value="Slotsy" >
-        <input type="button"  value="Ruletka" >
-        <img id="bzit" src="styles/sun.PNG" onclick="motyw('sun')">
-        <img id="bzit" src="styles/moon.jpg" onclick="motyw('moon')"> 
-  </form>
+
+ 
+
+  <nav>
+    <img class="logo" src="/images/logo.svg" alt="">
 
 
-  <div id="main">
+    <ul>
+        <li><a href="#">CV</a></li>
+        <li><a href="#">CV</a></li>
+        <li><a href="#">CV</a></li>
+        <li>
+
+          <div id="background">
+          <p id="kolory" class='bx bxs-moon' onclick="motyw()" value="moon" > </p>
+          
+          </div>
+
+        </li>
+    </ul>
+
+    <button class="burger">
+      <i class='bx bx-menu-alt-right' >
+      </i>
+    </button>
+</nav>
+
+<script>
+
+const Nav = document.querySelector('ul');
+const burger = document.querySelector(".burger");
+
+burger.addEventListener('click',function()
+{
+  Nav.classList.toggle('active')
+  burger.classList.toggle('active')
+})
+</script>
+
+
+  
+
+
+
+
+<div id="gra">
+
+ 
     <p id="gz">Spróbuj swojego szczęscia</p>
     <h3> Twoja ilość żetonów: <a id="points">1000</a> </h3>
     
@@ -53,11 +91,18 @@ function losuj(x){
 
 
 let becik = document.getElementById("bets").value;
+let punkty = (document.getElementById("points").innerHTML)*1;
+console.log(punkty);
 
 
-
-if( becik != 0){
-  losowanie(x);
+if( becik != 0 && punkty > 0){
+  if(becik <= punkty){
+    console.log("masz duzo punktów");
+     losowanie(x);
+  }
+  else{
+    document.getElementById("gz").innerHTML= "<div id='sad'>Nie posiadasz wystarczająco punktów </div>";
+  }
 }
 else{
   document.getElementById("gz").innerHTML=  " <div id='sad'> Musisz coś obstawić żeby zagrać </div>";
@@ -109,17 +154,27 @@ else if(choice == 'HIGH')
 
 function losujzliczb(x){ 
 
-let becik = document.getElementById("bets").value;
 
-if( becik != 0){
-  losowaniezliczb(becik,x);
+let becik = document.getElementById("bets").value;
+let punkty = (document.getElementById("points").innerHTML)*1;
+console.log(punkty);
+
+
+if( becik != 0 && punkty > 0){
+  if(becik <= punkty){
+    console.log("masz duzo punktów");
+     losowaniezliczb(x,becik);
+  }
+  else{
+    document.getElementById("gz").innerHTML= "<div id='sad'>Nie posiadasz wystarczająco punktów </div>";
+  }
 }
 else{
-  document.getElementById("gz").innerHTML= " <div id='sad'> Musisz coś obstawić żeby zagrać </div>";
+  document.getElementById("gz").innerHTML=  " <div id='sad'> Musisz coś obstawić żeby zagrać </div>";
 }
 }
 
-function losowaniezliczb(bet,liczba){
+function losowaniezliczb(liczba,bet){
 
 let choice = liczba;   
 let random1 = Math.floor(Math.random() * 6)+1;
@@ -147,17 +202,29 @@ else{
 }
 }
 
-function motyw(motive){
-  let kolor = motive;
-  if(kolor == 'moon'){
-  document.body.style.backgroundColor = "black";
-  document.body.style.color = "white";
+function motyw(){
+
+ const element = document.getElementById("kolory");
+ let cos=  element.getAttributeNode("value").value;
+
+  if(cos == "moon"){
+
+  const element = document.getElementById("kolory");
+  element.getAttributeNode("value").value = "sun";
+  document.getElementById("kolory").className = "bx bxs-sun";
+  document.body.style.backgroundColor = "pink";
+   document.body.style.color = "black";
+
+
   }
   else{
-    document.body.style.backgroundColor = "pink";
-   document.body.style.color = "black";
-  }
+    document.getElementById("kolory").className = "bx bxs-moon";
+    const element = document.getElementById("kolory");
+    element.getAttributeNode("value").value = "moon";
+    document.body.style.backgroundColor = "#afafaf";
+    document.body.style.color = "black";
 
+  }
 }
 
 </script>
@@ -166,7 +233,6 @@ function motyw(motive){
 <img id="result2" src="oczka/oczko_1.PNG">
 
 <p id ="score"></p>
-  </div>
-</div>
+  </div> 
 </body>
 </html>
