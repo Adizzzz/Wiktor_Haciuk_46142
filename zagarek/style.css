@@ -1,0 +1,32 @@
+body{
+    font: 14px/26px 'Bungee', Helvetica, Arial, sans-serif;
+    background-color: cornflowerblue;
+}
+.main{
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    width: 50%;
+    height: auto;
+    left: 25%;
+    background-color: rgb(90, 90, 88, 0.6);
+    border-radius: 30px;
+
+
+
+
+}
+@media only screen and (max-width: 1000px){
+    .TimePhoto{
+        width: 250px;
+        height: 175px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .TimePhoto{
+        width: 200px;
+        height: 125px;
+    }
+
+}
