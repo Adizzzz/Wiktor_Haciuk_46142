@@ -1,0 +1,95 @@
+body{
+    font: 26px 'Bungee', Helvetica, Arial, sans-serif;
+    background-color: cornflowerblue;
+}
+.main{
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    width: 50%;
+    height: auto;
+    left: 25%;
+    background-color: rgb(90, 90, 88, 0.6);
+    border-radius: 30px;
+
+
+}
+
+ul {
+	text-align: left;
+	margin-top: 20px;
+}
+
+
+li {
+
+	padding: 10px 20px;
+	color: black;
+	font-weight: 600;
+	border: 2px solid #000000;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	background:  rgba(222, 222, 222, 0.2);
+    margin: 20px;
+    font-size: 18px;
+
+}
+
+li:hover {
+	background: #76CFE0;
+}
+
+li > button {
+	background: none;
+	border: none;
+	float: right;
+	color: red;
+	font-weight: 800;
+    font-size: 30px;
+}
+
+input {
+	border-radius: 5px;
+	min-width: 65%;
+	padding: 5px;
+	border: none;
+    width: 90%;
+    height: 30px;
+    font-size: 20px;
+
+}
+
+
+.delete {
+	display: none;
+}
+.done,.done:hover{
+    background-color: lightgreen;
+}
+
+button{
+
+    background: none;
+	border: none;
+	color: black;
+	font-weight: 800;
+    font-size: 30px;
+}
+.btnedit{
+    color: lightblue;
+    font-size: 20px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.btndelete{
+    color: red;
+    font-size: 20px;
+    border: 1px solid black;
+}
+    
+.btndone{
+    color: green;
+    font-size: 20px;
+    border: 1px solid black;
+}
